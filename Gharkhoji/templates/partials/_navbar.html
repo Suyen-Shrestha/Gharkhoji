@@ -1,23 +1,25 @@
 {% load static %}
+{% url 'index' as index_url %}
+{% url 'about' as about_url %}
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="{% static 'img/logo.png' %}" class="logo" alt="">
+            <img src="{% static 'imag/logo.png' %}" class="logo" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
-                <li class="nav-item active mr-3">
-                    <a class="nav-link" href="index.html">Home</a>
+                <li class="nav-item {% if request.path ==  index_url %} active {% endif %} mr-3">
+                    <a class="nav-link" href="{{ index_url }}">Home</a>
+                </li>
+                <li class="nav-item {% if request.path ==  about_url %} active {% endif %} mr-3">
+                    <a class="nav-link" href="{{ about_url }}">About</a>
                 </li>
                 <li class="nav-item mr-3">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item mr-3">
-                    <a class="nav-link" href="listings.html">Featured Listings</a>
+                    <a class="nav-link" href="{{ index_url }}">Featured Listings</a>
                 </li>
             </ul>
 
