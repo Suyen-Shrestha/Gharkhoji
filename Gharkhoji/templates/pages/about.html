@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% url 'pages:index' as index_url %}
 
 
 {% load static %}
@@ -23,7 +22,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{ index_url }}">
+            <a href="{% url 'pages:index' %}">
               <i class="fas fa-home"></i> Home</a>
           </li>
           <li class="breadcrumb-item active"> About</li>
